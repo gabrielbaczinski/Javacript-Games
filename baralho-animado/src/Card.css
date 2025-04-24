@@ -1,0 +1,58 @@
+.balatro-container {
+  perspective: 1000px;
+  width: 220px;
+  height: 320px;
+  margin: 50px auto;
+}
+
+.balatro-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+  cursor: pointer;
+}
+
+.balatro-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.balatro-front,
+.balatro-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff3;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+.balatro-front {
+  background: url("https://images.steamusercontent.com/ugc/2413438784260913380/7CC7F0ADFD23E0ACCA835442184E3605C724A877/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false") center center / cover no-repeat;
+}
+
+.balatro-back {
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(180deg);
+}
+
+.balatro-logo {
+  width: 200px;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+  animation: logoFloat 2s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+
